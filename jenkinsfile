@@ -9,12 +9,6 @@ pipeline{
             }
         }
 
-        stage("Setting up Noje.js"){
-            steps{
-                bat 'node -v'
-            }
-        }
-
         stage("Install dependencies"){
             steps{
                 bat 'npm install'
