@@ -1,7 +1,5 @@
 pipeline{
-    agent{
-        label "node"
-    }
+    agent any
     stages{
         stage("Checkout code"){
             steps{
@@ -14,6 +12,12 @@ pipeline{
                 bat 'npm install'
             }
         }
+
+        stage("Set up node.js") {
+            steps {
+                bat "node -v"
+                }
+            }
 
         stage("Starting the application"){
             steps{
